@@ -1,4 +1,32 @@
 .header {
-  @extend %main-text;
-  background-color: blue;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: $c_white;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+  }
+
+  &__right {
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 33px;
+    align-items: center;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__burger {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+    };
+  }
 }
