@@ -3,6 +3,12 @@
     display: grid;
     grid-auto-flow: column;
     column-gap: 25px;
+
+    &--menu {
+      grid-auto-flow: row;
+      justify-items: center;
+      row-gap: 24px;
+    }
   }
 
   &__link {
@@ -12,6 +18,11 @@
 
     &:hover {
       color: $c_black;
+    }
+
+    &--menu {
+      @extend %menu-link-text;
+      color: $c_white;
     }
   }
 }
