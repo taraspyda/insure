@@ -1,0 +1,21 @@
+.socials {
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 16px;
+  width: max-content;
+
+  &__link {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: $c_grey;
+    transition-duration: $amin-time;
+
+    &:hover {
+      color: $c_black;
+    }
+  }
+}
