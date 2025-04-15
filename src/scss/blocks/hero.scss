@@ -1,0 +1,93 @@
+$max-offset: 105;
+$min-offset: 93;
+
+.hero {
+  position: relative;
+  @include adaptive-value('margin-bottom', $max-offset, $min-offset);
+  background-color: $c_dark-blue;
+  color: $c_white;
+
+  @include onMobile {
+    margin-bottom: 0;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 30px;
+
+    @include onTablet {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__article {
+    @include adaptive-value('padding-block', $max-offset, $min-offset);
+
+    @include onTablet {
+      padding-bottom: 0;
+    }
+
+    @include onMobile {
+      display: grid;
+      justify-items: center;
+      @include adaptive-value('padding-bottom', $max-offset, $min-offset);
+    }
+  }
+
+  &__title {
+    position: relative;
+    margin-bottom: 16px;
+    padding-top: 63px;
+    @extend %h1;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 150px;
+      height: 1px;
+      background-color: $c_white;
+    }
+
+    @include onMobile {
+      padding-top: 0;
+      text-align: center;
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  &__text {
+    @include adaptive-value('margin-bottom', 24, 32);
+
+    @include onMobile {
+      text-align: center;
+    }
+  }
+
+  &__image {
+    position: relative;
+    @include adaptive-value('top', $max-offset, $min-offset);
+    display: block;
+    width: 100%;
+    object-position: top;
+    object-fit: contain;
+
+    @include onMobile {
+      display: none;
+    }
+
+    &--mobile {
+      display: none;
+
+      @include onMobile {
+        position: static;
+        display: block;
+      }
+    }
+  }
+}

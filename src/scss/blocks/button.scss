@@ -32,5 +32,16 @@
       @extend %menu-link-text;
       color: $c_white;
     }
+
+    &--dark-blue {
+      border-color: $c_white;
+      background-color: $c_dark-blue;
+      color: $c_white;
+
+      &:hover {
+        background-color: $c_white;
+        color: $c_dark-blue;
+      }
+    }
   }
 }
