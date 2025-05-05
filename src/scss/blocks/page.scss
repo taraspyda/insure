@@ -7,7 +7,10 @@
   @extend %main-text;
 
   &__content {
+    display: grid;
+    @include adaptive-value('row-gap', 150, 140);
     flex-grow: 1;
+    @include adaptive-value('margin-bottom', 150, 140);
   }
 
   &__menu {

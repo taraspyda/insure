@@ -11,6 +11,55 @@ $min-offset: 93;
     margin-bottom: 0;
   }
 
+  &__pattern {
+    position: absolute;
+    z-index: 1;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    &--big {
+      top: 0;
+      right: 0;
+      height: 90%;
+      aspect-ratio: 370 / 510;
+      background-image: url("/public/images/desktop/bg-pattern-intro-right-desktop.svg");
+
+      @include onTablet {
+        height: 50%;
+      }
+
+      @include onMobile {
+        top: auto;
+        bottom: 0;
+        height: 35%;
+        translate: 0 55%;
+        aspect-ratio: 130 / 350;
+        background-image: url("/public/images/mobile/bg-pattern-intro-right-mobile.svg");
+      }
+    }
+
+    &--small {
+      bottom: 0;
+      left: 0;
+      height: 70%;
+      aspect-ratio: 280 / 650;
+      translate: 0 60%;
+      background-image: url("/public/images/desktop/bg-pattern-intro-left-desktop.svg");
+
+      @include onTablet {
+        height: 40%;
+      }
+
+      @include onMobile {
+        top: 0;
+        translate: -35% 0;
+        height: 60%;
+        aspect-ratio: 8 / 10;
+        background-image: url("/public/images/mobile/bg-pattern-intro-left-mobile.svg");
+      }
+    }
+  }
+
   &__content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -18,6 +67,10 @@ $min-offset: 93;
 
     @include onTablet {
       grid-template-columns: 1fr;
+    }
+
+    @include onMobile {
+      position: relative;
     }
   }
 
