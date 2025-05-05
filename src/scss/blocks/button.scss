@@ -16,7 +16,6 @@
     width: 100%;
     height: 100%;
     border: 1.5px solid $c_black;
-    background-color: $c_white;
     @extend %button-text;
     color: $c_black;
     transition-duration: $amin-time;
@@ -26,16 +25,8 @@
       color: $c_white;
     }
 
-    &--black {
+    &--white {
       border-color: $c_white;
-      background-color: $c_black;
-      @extend %menu-link-text;
-      color: $c_white;
-    }
-
-    &--dark-blue {
-      border-color: $c_white;
-      background-color: $c_dark-blue;
       color: $c_white;
 
       &:hover {
